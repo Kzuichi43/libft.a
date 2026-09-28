@@ -1,67 +1,81 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alexgonz <alexgonz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/27 15:07:48 by alexgonz          #+#    #+#             */
-/*   Updated: 2026/09/27 15:28:25 by alexgonz         ###   ########.fr       */
+/*   Created: 2026/09/27 15:31:52 by alexgonz          #+#    #+#             */
+/*   Updated: 2026/09/27 15:44:52 by alexgonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <stdio.h>
 
-int	ft_strlen(char *str)
+int	check(char c, char const *set)
 {
 	int	i;
 
 	i = 0;
-	while (str[i] != '\0')
+	while (set[i])
+	{
+		if (set[i] == c)
+			return (1);
+		i++;
+	}
+	return (0);
+}
+
+int	ft_strlen(char const *s1)
+{
+	int	i;
+
+	i = 0;
+	while (s1[i] != '\0')
 		i++;
 	return (i);
 }
 
-void	ft_strcat(char *dest, char *src)
+int	count(char const *s1, char const *set)
 {
 	int	i;
-	int	len;
+	int	res;
 
 	i = 0;
-	len = ft_strlen(dest);
-	while (src[i] != '\0')
+	res = i;
+	while (s1[i] != '\0')
 	{
-		dest[len + i] = src[i];
+		if (!check(s1[i], set))
+			res++;
 		i++;
 	}
-	dest[len + i] = '\0';
+	return (res);
 }
 
-void	ft_strcpy(char *dest, char *src)
+char	*ft_strtrim(char const *s1, char const *set)
 {
 	int	i;
-
-	i = 0;
-	while (src[i] != '\0')
-	{
-		dest[i] = src[i];
-		i++;
-	}
-}
-
-char	*ft_strjoin(char const *s1, char const *s2)
-{
+	int	j;
 	int	len;
 	char	*str;
 
-	len = ft_strlen((char *)s1) + ft_strlen((char *)s2);
+	i = 0;
+	j = 0;
+	len = ft_strlen(s1) - count(s1, set);
 	str = malloc(sizeof(char) * (len + 1));
-	if (!str || !ft_strlen((char *)s1) || !ft_strlen((char *)s2))
+	if (!str)
 		return (NULL);
-	ft_strcpy(str, (char *)s1);
-	ft_strcat(str, (char *)s2);
-	str[len] = '\0';
+	while (s1[i] != '\0')
+	{
+		if (!check(s1[i], set))
+		{
+			str[j] = s1[i];
+			j++;
+		}
+		i++;
+	}
+	str[j] = '\0';
 	return (str);
 }
 
@@ -69,6 +83,6 @@ int	main(int argc, char **argv)
 {
 	if (argc < 3)
 		return (0);
-	printf("%s \n", ft_strjoin(argv[1], argv[2]));
+	printf("%s", ft_strtrim(argv[1], argv[2]));
 	return (0);
 }
