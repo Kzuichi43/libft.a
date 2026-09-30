@@ -6,38 +6,37 @@
 /*   By: alexgonz <alexgonz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/25 10:22:56 by alexgonz          #+#    #+#             */
-/*   Updated: 2026/09/25 10:47:41 by alexgonz         ###   ########.fr       */
+/*   Updated: 2026/09/30 11:09:46 by alexgonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
+//#include <stdio.h>
+//#include <string.h>
 
-void    *ft_memset(void *ptr, int x, size_t n)
+static void	*ft_memset(void *ptr, int x, size_t n)
 {
-        size_t          i;
-        unsigned char           *p;
+	size_t			i;
+	unsigned char	*p;
 
-
-        i = 0;
-        p = (unsigned char *)ptr;
-        while (i < n)
-        {
-                p[i] = (char)x;
-                i++;
-        }
-        return (ptr);
+	i = 0;
+	p = (unsigned char *)ptr;
+	while (i < n)
+	{
+		p[i] = (char)x;
+		i++;
+	}
+	return (ptr);
 }
 
 void	*ft_memmove(void *to, const void *from, size_t numBytes)
 {
-	unsigned char	*t;
-	unsigned char	*f;
-	size_t	i;
+	size_t						i;
+	unsigned char				*t;
+	const unsigned char			*f;
 
 	i = 0;
 	t = (unsigned char *)to;
-	f = (unsigned char *)from;
+	f = (const unsigned char *)from;
 	if (t > f)
 	{
 		while (numBytes > 0)
@@ -57,7 +56,7 @@ void	*ft_memmove(void *to, const void *from, size_t numBytes)
 	}
 	return (t);
 }
-
+/*
 int     main(void)
 {
         char s[10] = {'b','a','r','c','e','l','o','n','a','\0'};
@@ -74,4 +73,4 @@ int     main(void)
 
         return (0);
 }
-
+*/

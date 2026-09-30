@@ -6,45 +6,30 @@
 /*   By: alexgonz <alexgonz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/24 23:04:57 by alexgonz          #+#    #+#             */
-/*   Updated: 2026/09/25 10:18:54 by alexgonz         ###   ########.fr       */
+/*   Updated: 2026/09/30 11:42:12 by alexgonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stdio.h>
-
-void    *ft_memset(void *ptr, int x, size_t n)
-{
-        size_t          i;
-        unsigned char           *p;
-
-
-        i = 0;
-        p = (unsigned char *)ptr;
-        while (i < n)
-        {
-                p[i] = (char)x;
-                i++;
-        }
-        return (ptr);
-}
+//#include <string.h>
+//#include <stdio.h>
 
 void	*ft_memcpy(void *to, const void *from, size_t numBytes)
 {
-	unsigned char	*p_from;
-	size_t	i;
+	const unsigned char		*p_from;
+	unsigned char			*p_to;
+	size_t					i;
 
-	p_from = (unsigned char *)from;
+	p_from = (const unsigned char *)from;
+	p_to = (unsigned char *)to;
 	i = 0;
-	while (numBytes > i && from)
+	while (numBytes > i)
 	{
-		ft_memset(to, p_from[i], 1);
-		to++;
+		p_to[i] = p_from[i];
 		i++;
 	}
 	return (to);
 }
-
+/*
 
 int	main(void)
 {
@@ -62,16 +47,4 @@ int	main(void)
 
 	return (0);
 }
-/*
-int main() {
-    char str1[] = "Geeks";
-    char str2[12] = "";
-
-    // Copies contents of str1 to str2
-    ft_memcpy(str2, str1, sizeof(str1));
-
-    printf("str2 after memcpy:");
-    printf("%s\n",str2);
-
-    return 0;
-}*/
+*/

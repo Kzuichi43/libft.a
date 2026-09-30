@@ -6,14 +6,14 @@
 /*   By: alexgonz <alexgonz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/27 14:47:23 by alexgonz          #+#    #+#             */
-/*   Updated: 2026/09/27 15:05:26 by alexgonz         ###   ########.fr       */
+/*   Updated: 2026/09/30 10:19:53 by alexgonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include <stdio.h>
+//#include <stdio.h>
 
-int	ft_strlen(char *str)
+static int	ft_strlen(char *str)
 {
 	int	i;
 
@@ -46,11 +46,11 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	str[i] = '\0';
 	return (str);
 }
-
+/*
 int	main(int argc, char **argv)
 {
 	if (argc < 3)
 		return (0);
 	printf("%s \n", ft_substr(argv[1], atoi(argv[2]), atoi(argv[3])));
 	return (0);
-}
+}*/

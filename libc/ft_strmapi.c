@@ -6,14 +6,14 @@
 /*   By: alexgonz <alexgonz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/28 10:44:33 by alexgonz          #+#    #+#             */
-/*   Updated: 2026/09/28 11:01:12 by alexgonz         ###   ########.fr       */
+/*   Updated: 2026/09/30 12:07:45 by alexgonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include <stdio.h>
+//#include <stdio.h>
 
-int	ft_strlen(char *str)
+static int	ft_strlen(char *str)
 {
 	int	i;
 
@@ -22,7 +22,7 @@ int	ft_strlen(char *str)
 		i++;
 	return (i);
 }
-
+/*
 char	nothing(unsigned int i, char c)
 {
 	if (i < 3)
@@ -30,12 +30,13 @@ char	nothing(unsigned int i, char c)
 	else
 		return ('a');
 }
+*/
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	unsigned int	len;
 	unsigned int	i;
-	char	*sol;
+	char			*sol;
 
 	len = ft_strlen((char *)s);
 	sol = malloc(sizeof(char) * (len + 1));
@@ -50,7 +51,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	sol[len] = '\0';
 	return (sol);
 }
-
+/*
 int	main(int argc, char **argv)
 {
 	if (argc < 2)
@@ -58,3 +59,4 @@ int	main(int argc, char **argv)
 	printf("%s \n", ft_strmapi(argv[1], &nothing));
 	return (0);
 }
+*/

@@ -6,13 +6,13 @@
 /*   By: alexgonz <alexgonz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/28 11:34:52 by alexgonz          #+#    #+#             */
-/*   Updated: 2026/09/28 11:42:54 by alexgonz         ###   ########.fr       */
+/*   Updated: 2026/09/29 11:27:58 by alexgonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <fcntl.h>
 #include <unistd.h>
-#include <stdlib.h>
+//#include <stdlib.h>
 
 void	ft_putnbr_fd(int n, int fd)
 {
@@ -33,7 +33,7 @@ void	ft_putnbr_fd(int n, int fd)
 	c = n % 10 + '0';
 	write(fd, &c, 1);
 }
-
+/*
 int	main(int argc, char **argv)
 {
 	int	fd;
@@ -44,4 +44,4 @@ int	main(int argc, char **argv)
 	ft_putnbr_fd(atoi(argv[2]), fd);
 	close(fd);
 	return (0);
-}
+}*/

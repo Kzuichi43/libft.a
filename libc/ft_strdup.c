@@ -6,13 +6,13 @@
 /*   By: alexgonz <alexgonz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/27 13:07:36 by alexgonz          #+#    #+#             */
-/*   Updated: 2026/09/27 14:46:15 by alexgonz         ###   ########.fr       */
+/*   Updated: 2026/09/30 11:10:03 by alexgonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-int	ft_strlen(char *str)
+static int	ft_strlen(char *str)
 {
 	int	i;
 
@@ -24,7 +24,7 @@ int	ft_strlen(char *str)
 
 char	*ft_strdup(const char *s)
 {
-	int	i;
+	int		i;
 	char	*str;
 
 	i = 0;

@@ -6,14 +6,14 @@
 /*   By: alexgonz <alexgonz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/27 11:52:55 by alexgonz          #+#    #+#             */
-/*   Updated: 2026/09/27 13:07:09 by alexgonz         ###   ########.fr       */
+/*   Updated: 2026/09/30 11:57:19 by alexgonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include <unistd.h>
+//#include <unistd.h>
 
-void	ft_putstr(char *str, int n)
+/*static void	ft_putstr(char *str, int n)
 {
 	int	i;
 
@@ -25,12 +25,12 @@ void	ft_putstr(char *str, int n)
 		i++;
 	}
 }
-
+*/
 void	*ft_calloc(size_t n, size_t size)
 {
-	int	i;
-	long	len;
-	unsigned char 	*str;
+	int				i;
+	long			len;
+	unsigned char	*str;
 
 	if (n < 1 || size < 1)
 		return (malloc(0));
@@ -47,7 +47,7 @@ void	*ft_calloc(size_t n, size_t size)
 	}
 	return ((void *)str);
 }
-
+/*
 int	main(int argc, char **argv)
 {
 	if (argc < 2)
@@ -58,4 +58,4 @@ int	main(int argc, char **argv)
 	ft_putstr(str, atoi(argv[1]));
 	write(1, "\n", 1);
 	return (0);
-}
+}*/

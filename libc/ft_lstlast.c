@@ -1,44 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*             last()                                           :::      ::::::::   */
+/*                                                        :::      ::::::::   */
 /*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alexgonz <alexgonz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/28 12:39:58 by alexgonz          #+#    #+#             */
-/*   Updated: 2026/09/28 12:47:55 by alexgonz         ###   ########.fr       */
+/*   Updated: 2026/09/29 11:22:45 by alexgonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-unsigned int    ft_lstsize(t_list *lst)
-{
-        unsigned int    i;
-        t_list  temp;
-
-        temp = lst;
-        i = 0;
-        while (temp->next != NULL)
-        {
-                temp = temp->next;
-                i++;
-        }
-        return (i);
-}
-
-
 t_list	*ft_lstlast(t_list *lst)
 {
-	unsigned int	len;
 	t_list	*last;
 
-	len = ft_lstsize(lst);
 	last = lst;
-	while (len > 0)
+	while (last->next != NULL)
 	{
+		if (last->next == NULL)
+			return (last);
 		last = last->next;
-		len--;
 	}
 	return (last);
 }

@@ -6,15 +6,15 @@
 /*   By: alexgonz <alexgonz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/25 13:01:14 by alexgonz          #+#    #+#             */
-/*   Updated: 2026/09/26 12:19:13 by alexgonz         ###   ########.fr       */
+/*   Updated: 2026/09/30 11:00:31 by alexgonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+//#include <stdio.h>
 
-char	*ft_strchr(const char * str, int ch)
+char	*ft_strchr(const char *str, int ch)
 {
-	int	i;
+	int		i;
 	char	*s;
 
 	i = 0;
@@ -27,11 +27,11 @@ char	*ft_strchr(const char * str, int ch)
 	}
 	return (0);
 }
-
+/*
 int	main(int argc, char **argv)
 {
 	if (argc < 3)
 		return (0);
 	printf("%s \n", ft_strchr(argv[1], argv[2][0]));
 	return (0);
-}
+}*/

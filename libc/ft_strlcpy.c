@@ -6,25 +6,37 @@
 /*   By: alexgonz <alexgonz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/25 11:59:53 by alexgonz          #+#    #+#             */
-/*   Updated: 2026/09/25 12:27:56 by alexgonz         ###   ########.fr       */
+/*   Updated: 2026/09/30 12:06:43 by alexgonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
+//#include <stdio.h>
+//#include <string.h>
 
-size_t	ft_strlcpy(char *dest, char *src, size_t size)
+int	ft_strlen(const char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i] != '\0')
+		i++;
+	return (i);
+}
+
+size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 {
 	size_t	i;
 
 	i = 0;
+	if (size == 0)
+		return (ft_strlen(src));
 	while (src[i] != '\0' && i < size - 1)
 	{
 		dest[i] = src[i];
 		i++;
 	}
 	dest[i] = '\0';
-	return (i + 1);
+	return (ft_strlen(src));
 }
 /*
 int	main(int argc, char **argv)
@@ -35,6 +47,7 @@ int	main(int argc, char **argv)
 		return (0);
 	printf("VAMOS A COPIAR ARGV[1]\n");
 	printf("ARGV[1]: %s\n", argv[1]);
-	printf("DESPUES %ld, con valor %s\n", ft_strlcpy(str, arr, strlen(arr)), str);
+	printf("DESPUES %ld, con valor %s\n", 
+		ft_strlcpy(str, arr, strlen(arr)), str);
 	return (0);
 }*/

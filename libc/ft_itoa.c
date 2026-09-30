@@ -6,14 +6,14 @@
 /*   By: alexgonz <alexgonz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/28 10:10:25 by alexgonz          #+#    #+#             */
-/*   Updated: 2026/09/28 10:41:19 by alexgonz         ###   ########.fr       */
+/*   Updated: 2026/09/30 12:15:29 by alexgonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include <stdio.h>
+//#include <stdio.h>
 
-int	count_len(int n)
+static int	count_len(int n)
 {
 	int	len;
 
@@ -33,7 +33,7 @@ int	count_len(int n)
 	return (len);
 }
 
-void	ft_strcat(char *str, char c)
+static void	ft_strcat(char *str, char c)
 {
 	int	i;
 
@@ -43,7 +43,7 @@ void	ft_strcat(char *str, char c)
 	str[i] = c;
 }
 
-void	ft_num(char *nbr, int n)
+static void	ft_num(char *nbr, int n)
 {
 	if (n >= 10)
 		ft_num(nbr, n / 10);
@@ -53,7 +53,7 @@ void	ft_num(char *nbr, int n)
 char	*ft_itoa(int n)
 {
 	char	*nbr;
-	int	len;
+	int		len;
 
 	len = count_len(n);
 	nbr = malloc(sizeof(char) * (len + 1));
@@ -71,11 +71,11 @@ char	*ft_itoa(int n)
 	nbr[len + 1] = '\0';
 	return (nbr);
 }
-
+/*
 int	main(int argc, char **argv)
 {
 	if (argc < 2)
 		return (0);
 	printf("%s \n", ft_itoa(atoi(argv[1])));
 	return (0);
-}
+}*/

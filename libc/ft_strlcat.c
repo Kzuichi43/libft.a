@@ -6,14 +6,24 @@
 /*   By: alexgonz <alexgonz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/25 12:28:18 by alexgonz          #+#    #+#             */
-/*   Updated: 2026/09/25 12:50:41 by alexgonz         ###   ########.fr       */
+/*   Updated: 2026/09/30 12:09:48 by alexgonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
+//#include <stdio.h>
+//#include <string.h>
 
-size_t	ft_strlcat(char *dest, char *src, size_t size)
+static int	ft_strlen(const char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i] != '\0')
+		i++;
+	return (i);
+}
+
+size_t	ft_strlcat(char *dest, const char *src, size_t size)
 {
 	size_t	i;
 	size_t	j;
@@ -21,7 +31,7 @@ size_t	ft_strlcat(char *dest, char *src, size_t size)
 
 	i = 0;
 	j = 0;
-	len_s = strlen(src);
+	len_s = ft_strlen(src);
 	if (size == 0)
 		return (len_s);
 	while (dest[j])
@@ -37,11 +47,13 @@ size_t	ft_strlcat(char *dest, char *src, size_t size)
 		return (len_s + size);
 	return (j + len_s);
 }
-
+/*
 int	main(int argc, char **argv)
 {
 	if (argc < 3)
 		return (0);
-	printf("VALOR %ld, RESULTADO %s \n", strlcat(argv[1], argv[2], strlen(argv[1]) + strlen(argv[2])), argv[1]);
+	printf("VALOR %ld, RESULTADO %s \n", strlcat(argv[1], argv[2],
+		strlen(argv[1]) + strlen(argv[2])), argv[1]);
 	return (0);
 }
+*/

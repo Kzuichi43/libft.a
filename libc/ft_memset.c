@@ -6,18 +6,17 @@
 /*   By: alexgonz <alexgonz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/24 15:21:16 by alexgonz          #+#    #+#             */
-/*   Updated: 2026/09/25 09:36:19 by alexgonz         ###   ########.fr       */
+/*   Updated: 2026/09/30 12:01:10 by alexgonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
+//#include <stdio.h>
+//#include <string.h>
 
 void	*ft_memset(void *ptr, int x, size_t n)
 {
-	size_t		i;
-	unsigned char		*p;
-
+	size_t			i;
+	unsigned char	*p;
 
 	i = 0;
 	p = (unsigned char *)ptr;

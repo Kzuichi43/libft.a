@@ -6,11 +6,11 @@
 /*   By: alexgonz <alexgonz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/27 11:35:17 by alexgonz          #+#    #+#             */
-/*   Updated: 2026/09/27 11:50:31 by alexgonz         ###   ########.fr       */
+/*   Updated: 2026/09/30 12:02:52 by alexgonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+//#include <stdio.h>
 
 int	ft_atoi(const char *nbr)
 {
@@ -21,7 +21,7 @@ int	ft_atoi(const char *nbr)
 	res = 0;
 	i = 0;
 	c = 1;
-	while (nbr[i] == ' ')
+	while (nbr[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
 		i++;
 	if (nbr[i] == '-')
 	{
@@ -36,11 +36,11 @@ int	ft_atoi(const char *nbr)
 	}
 	return (c * res);
 }
-
+/*
 int	main(int argc, char **argv)
 {
 	if (argc < 2)
 		return (0);
 	printf("%d \n", ft_atoi(argv[1]));
 	return (0);
-}
+}*/

@@ -6,14 +6,14 @@
 /*   By: alexgonz <alexgonz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/27 15:31:52 by alexgonz          #+#    #+#             */
-/*   Updated: 2026/09/27 15:44:52 by alexgonz         ###   ########.fr       */
+/*   Updated: 2026/09/30 11:46:24 by alexgonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include <stdio.h>
+//#include <stdio.h>
 
-int	check(char c, char const *set)
+static int	check(char c, char const *set)
 {
 	int	i;
 
@@ -27,7 +27,7 @@ int	check(char c, char const *set)
 	return (0);
 }
 
-int	ft_strlen(char const *s1)
+static int	ft_strlen(char const *s1)
 {
 	int	i;
 
@@ -37,7 +37,7 @@ int	ft_strlen(char const *s1)
 	return (i);
 }
 
-int	count(char const *s1, char const *set)
+static int	count(char const *s1, char const *set)
 {
 	int	i;
 	int	res;
@@ -55,9 +55,9 @@ int	count(char const *s1, char const *set)
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	int	i;
-	int	j;
-	int	len;
+	int		i;
+	int		j;
+	int		len;
 	char	*str;
 
 	i = 0;
@@ -78,11 +78,11 @@ char	*ft_strtrim(char const *s1, char const *set)
 	str[j] = '\0';
 	return (str);
 }
-
+/*
 int	main(int argc, char **argv)
 {
 	if (argc < 3)
 		return (0);
 	printf("%s", ft_strtrim(argv[1], argv[2]));
 	return (0);
-}
+}*/

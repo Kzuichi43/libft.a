@@ -1,21 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alexgonz <alexgonz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/24 15:19:34 by alexgonz          #+#    #+#             */
-/*   Updated: 2026/09/30 10:16:33 by alexgonz         ###   ########.fr       */
+/*   Created: 2026/09/28 18:15:57 by alexgonz          #+#    #+#             */
+/*   Updated: 2026/09/30 10:11:22 by alexgonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(const char *str)
-{
-	int	i;
+#include "libft.h"
+#include <stdlib.h>
 
-	i = 0;
-	while (str[i] != '\0')
-		i++;
-	return (i);
+void	ft_lstdelone(t_list *lst, void (*del)(void*))
+{
+	if (lst && del)
+	{
+		del(lst->content);
+		free(lst);
+	}
 }
